@@ -1,0 +1,9 @@
+PageObject\LoginPage.class
+constants\Api.class
+constants\DriverFactory.class
+PageObject\PasswordPage.class
+constants\User.class
+PageObject\HomePage.class
+PageObject\CabinetPage.class
+PageObject\RegistrPage.class
+constants\UserSteps.class
