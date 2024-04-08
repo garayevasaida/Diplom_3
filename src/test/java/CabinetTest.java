@@ -1,12 +1,13 @@
 import PageObject.HomePage;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import PageObject.*;
 import constants.*;
 import org.openqa.selenium.WebDriver;
+
+import static org.junit.Assert.assertTrue;
 
 public class CabinetTest {
     private WebDriver driver;
@@ -36,25 +37,25 @@ public class CabinetTest {
 
     @Test
     @DisplayName("Переход по клику на «Личный кабинет».")
-    public void testAccountPageDisplayed() {
+    public void cabinetButtonTest() {
         homePage.clickAccountButton();
-        Assert.assertTrue("Вход в личный кабинет не выполнен", cabinetPage.textAccountPageIsDisplayed());
+        assertTrue(cabinetPage.textAccountPageIsDisplayed());
     }
 
     @Test
     @DisplayName("Переход по клику на «Конструктор")
-    public void testConstructorButton() {
+    public void constructorButtonTest() {
         homePage.clickAccountButton();
         cabinetPage.clickConstructorButton();
-        Assert.assertTrue("Переход в конструктор не произошел", homePage.makeBurgerTextIsDisplayed());
+        assertTrue(homePage.makeBurgerTextIsDisplayed());
     }
 
     @Test
     @DisplayName("Переход по клику на на логотип Stellar Burgers.")
-    public void testLogoButton() {
+    public void logoButtonTest() {
         homePage.clickAccountButton();
         cabinetPage.clickLogoButton();
-        Assert.assertTrue("Переход в конструктор не произошел", homePage.makeBurgerTextIsDisplayed());
+        assertTrue(homePage.makeBurgerTextIsDisplayed());
     }
     @After
     public void tearDown() {

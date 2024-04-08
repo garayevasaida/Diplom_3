@@ -14,10 +14,6 @@ public class User {
         this.password = password;
         this.name = name;
     }
-
-    public User() {
-    }
-
     public String getEmail() {
         return email;
     }

@@ -1,12 +1,13 @@
 import PageObject.HomePage;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import PageObject.*;
 import constants.*;
 import org.openqa.selenium.WebDriver;
+
+import static org.junit.Assert.assertTrue;
 
 
 public class RegistrationTest{
@@ -32,23 +33,22 @@ public class RegistrationTest{
 
     @Test
     @DisplayName("Проверка успешной регистрации")
-    public void checkingSuccessfulRegistration() {
+    public void successfulRegistrationTest() {
         registrPage.clickAndSendKeyToNameField(name);
         registrPage.clickAndSendKeyToEmailField(email);
         registrPage.clickAndSendKeyToPasswordField(password);
         registrPage.clickRegistrationButton();
-        Assert.assertTrue("Регистрация не произошла", loginPage.enterTextIsDisplayed());
+        assertTrue(loginPage.inputFieldIsDisplayed());
     }
 
     @Test
     @DisplayName("Проверка входа с некорректным паролем")
-    public void checkingForBadPasswordLogin() {
+    public void incorretPasswordLoginTest() {
         registrPage.clickAndSendKeyToNameField(name);
         registrPage.clickAndSendKeyToEmailField(email);
         registrPage.clickAndSendKeyToPasswordField(incorrectPassword);
         registrPage.clickRegistrationButton();
-        Assert.assertTrue("Ошибка о некорректном пароле не появилась",
-                registrPage.errorPasswordFieldIsDisplayed());
+        assertTrue(registrPage.incorrectPasswordFieldIsDisplayed());
     }
 
     @After

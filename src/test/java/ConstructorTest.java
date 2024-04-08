@@ -21,7 +21,7 @@ public class ConstructorTest {
 
     @Test
     @DisplayName("Переход на вкладку булки")
-    public void testActiveBunsButton() {
+    public void bunsButtonTest() {
         HomePage homePage = new HomePage(driver);
         homePage.clickSoucesButton();
         homePage.clickBunsButton();
@@ -30,7 +30,7 @@ public class ConstructorTest {
 
     @Test
     @DisplayName("Переход на вкладку соусы")
-    public void testActiveSaucesButton() {
+    public void soucesButtonTest() {
         HomePage homePage = new HomePage(driver);
         homePage.clickSoucesButton();
         assertTrue(homePage.souseInfoCheck());
@@ -38,7 +38,7 @@ public class ConstructorTest {
 
     @Test
     @DisplayName("Переход на вкладку начинки")
-    public void testActiveFillingsButton() {
+    public void fillingsButtonTest() {
         HomePage homePage = new HomePage(driver);
         homePage.clickFillingsButton();
         assertTrue(homePage.fillingsInfoCheck());

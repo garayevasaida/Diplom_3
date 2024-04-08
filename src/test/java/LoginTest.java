@@ -1,11 +1,12 @@
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import PageObject.*;
 import constants.*;
 import org.openqa.selenium.WebDriver;
+
+import static org.junit.Assert.assertTrue;
 
 public class LoginTest {
     private WebDriver driver;
@@ -31,43 +32,43 @@ public class LoginTest {
     }
     @Test
     @DisplayName("Вход по кнопке «Войти в аккаунт» на главной")
-    public void checkLoginOnMainPage() {
+    public void loginOnHomePageTest() {
         homePage.clickLoginButton();
         loginPage.sendKeyToEmailField(email);
         loginPage.sendKeyToPasswordField(password);
         loginPage.clickLoginButton();
-        Assert.assertTrue("Кнопка оформить заказ не появилась", homePage.makeBurgerTextIsDisplayed());
+        assertTrue(homePage.makeBurgerTextIsDisplayed());
     }
     @Test
     @DisplayName("Вход через кнопку «Личный кабинет»")
-    public void checkLoginByPersonalAccountButton() {
+    public void loginByAccountButtonTest() {
         homePage.clickAccountButton();
         loginPage.sendKeyToEmailField(email);
         loginPage.sendKeyToPasswordField(password);
         loginPage.clickLoginButton();
-        Assert.assertTrue("Кнопка оформить заказ не появилась", homePage.makeBurgerTextIsDisplayed());
+        assertTrue(homePage.makeBurgerTextIsDisplayed());
     }
     @Test
     @DisplayName("Вход через кнопку в форме регистрации")
-    public void checkLoginOnRegistrationPage() {
+    public void loginOnRegistrationPageTest() {
         homePage.clickLoginButton();
         loginPage.clickRegistrationButton();
         registrPage.clickLoginButton();
         loginPage.sendKeyToEmailField(email);
         loginPage.sendKeyToPasswordField(password);
         loginPage.clickLoginButton();
-        Assert.assertTrue("Кнопка оформить заказ не появилась", homePage.makeBurgerTextIsDisplayed());
+        assertTrue(homePage.makeBurgerTextIsDisplayed());
     }
     @Test
     @DisplayName("Вход через кнопку в форме восстановления пароля.")
-    public void checkLoginOnPasswordRecoveryPage() {
+    public void loginOnPasswordPageTest() {
         homePage.clickLoginButton();
         loginPage.clickResetPasswordButton();
         passwordPage.clickLoginButton();
         loginPage.sendKeyToEmailField(email);
         loginPage.sendKeyToPasswordField(password);
         loginPage.clickLoginButton();
-        Assert.assertTrue("Кнопка оформить заказ не появилась", homePage.makeBurgerTextIsDisplayed());
+        assertTrue(homePage.makeBurgerTextIsDisplayed());
     }
 
 

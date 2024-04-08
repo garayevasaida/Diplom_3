@@ -1,12 +1,13 @@
 import PageObject.HomePage;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import PageObject.*;
 import constants.*;
 import org.openqa.selenium.WebDriver;
+
+import static org.junit.Assert.assertTrue;
 
 public class LogoutTest {
     private WebDriver driver;
@@ -36,10 +37,10 @@ public class LogoutTest {
 
     @Test
     @DisplayName("Выход по кнопке «Выйти» в личном кабинете")
-    public void checkExitButton() {
+    public void exitButtonTest() {
         homePage.clickAccountButton();
         cabinetPage.clickExitButton();
-        Assert.assertTrue("Выход не произошел", loginPage.enterTextIsDisplayed());
+        assertTrue(loginPage.inputFieldIsDisplayed());
     }
     @After
     public void tearDown() {

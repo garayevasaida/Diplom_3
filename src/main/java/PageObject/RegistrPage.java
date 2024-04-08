@@ -13,7 +13,7 @@ public class RegistrPage {
     private final By emailField = By.xpath(".//div[./label[text()='Email']]/input[@name='name']");
     private final By passwordField = By.xpath(".//div[./label[text()='Пароль']]/input[@name='Пароль']");
     private final By registrationButton = By.xpath(".//button[text()='Зарегистрироваться']");
-    public final By errorPasswordField = By.className("input__error");
+    public final By incorrectPasswordField = By.className("input__error");
     public final By loginButton = By.className("Auth_link__1fOlj");
 
     @Step("Клик на кнопку 'Зарегистрироваться'")
@@ -43,9 +43,9 @@ public class RegistrPage {
     }
 
     @Step("Проверить, что сообщение об ошибке регистрации отображается")
-    public boolean errorPasswordFieldIsDisplayed() {
+    public boolean incorrectPasswordFieldIsDisplayed() {
 
-        return driver.findElement(errorPasswordField).isDisplayed();
+        return driver.findElement(incorrectPasswordField).isDisplayed();
     }
 
 }

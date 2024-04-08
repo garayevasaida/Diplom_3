@@ -41,7 +41,7 @@ public class LoginPage {
         driver.findElement(resetPasswordButton).click();
     }
     @Step("Отображение кнопки «Войти»")
-    public boolean enterTextIsDisplayed() {
+    public boolean inputFieldIsDisplayed() {
         return driver.findElement(inputField).isDisplayed();
     }
 
