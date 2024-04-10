@@ -28,7 +28,7 @@ public class LoginTest {
         registrPage = new RegistrPage(driver);
         passwordPage= new PasswordPage(driver);
         user = new User(email, password, name);
-        userSteps.createUser(user);
+        UserSteps.createUser(user);
     }
     @Test
     @DisplayName("Вход по кнопке «Войти в аккаунт» на главной")

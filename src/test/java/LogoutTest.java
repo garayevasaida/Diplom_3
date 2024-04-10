@@ -28,7 +28,7 @@ public class LogoutTest {
         loginPage = new LoginPage(driver);
         cabinetPage = new CabinetPage(driver);
         user = new User(email, password, name);
-        userSteps.createUser(user);
+        UserSteps.createUser(user);
         homePage.clickLoginButton();
         loginPage.sendKeyToEmailField(email);
         loginPage.sendKeyToPasswordField(password);
