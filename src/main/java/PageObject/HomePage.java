@@ -16,9 +16,9 @@ public class HomePage {
     private final By bunsButton = By.xpath("//div[contains(@class, 'tab_tab') and span[text()='Булки']]");
     private final By soucesButton = By.xpath("//span[@class='text text_type_main-default'][text()='Соусы']");
     private final By fillingsButton = By.xpath("//span[@class='text text_type_main-default'][text()='Начинки']");
-    private final By bunsInfo = By.xpath("//div[@class='BurgerIngredients_ingredients__menuContainer__Xu3Mo']/h2[text()='Булки']");
-    private final By souseInfo = By.xpath("//div[@class='BurgerIngredients_ingredients__menuContainer__Xu3Mo']/h2[text()='Соусы']");
-    private final By fillingsInfo = By.xpath("//div[@class='BurgerIngredients_ingredients__menuContainer__Xu3Mo']/h2[text()='Начинки']");
+    private final By bunsInfo = By.xpath("//div[contains(@class, 'tab_tab_type_current') and span[text()='Булки']]");
+    private final By souseInfo = By.xpath("//div[contains(@class, 'tab_tab_type_current') and span[text()='Соусы']]");
+    private final By fillingsInfo = By.xpath("//div[contains(@class, 'tab_tab_type_current') and span[text()='Начинки']]");
 
     @Step("Клик на кнопку «Войти в аккаунт»")
     public void clickLoginButton() {
