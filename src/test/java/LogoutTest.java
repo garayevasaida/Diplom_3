@@ -18,7 +18,6 @@ public class LogoutTest {
     LoginPage loginPage;
     CabinetPage cabinetPage;
     User user;
-    UserSteps userSteps;
 
     @Before
     public void setUp() {

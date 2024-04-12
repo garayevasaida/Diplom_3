@@ -18,7 +18,6 @@ public class LoginTest {
     RegistrPage registrPage;
     PasswordPage passwordPage;
     User user;
-    UserSteps userSteps;
     @Before
     public void setUp() {
         DriverFactory driverFactory = new DriverFactory();
